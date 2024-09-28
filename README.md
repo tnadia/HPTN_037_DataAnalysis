@@ -2,6 +2,7 @@
 This repository contains SAS code for analyzing data from the HPTN 037 study, focusing on the relationship between non-injection drug use (NIDU) and high-risk sexual behavior.
 
 # HPTN 037 Data Analysis Code
+Script name: hptn037_nidu_highrisk_analysis
 
 This repository contains SAS code for analyzing data from the HPTN 037 study, focusing on the relationship between non-injection drug use (NIDU) and high-risk sexual behavior.
 
