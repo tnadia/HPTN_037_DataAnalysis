@@ -1,74 +1,69 @@
-# HPTN037 Data Analysis
-This repository contains SAS code for analyzing data from the HPTN 037 study, focusing on the relationship between non-injection drug use (NIDU) and high-risk sexual behavior.
+# HPTN 037 Data Analysis
 
-# HPTN 037 Data Analysis Code
-Script name: hptn037_nidu_highrisk_analysis
+This directory contains SAS code for analyzing data from the HPTN 037 study, focusing on non-injection drug use (NIDU) and high-risk sexual behavior.
 
-This repository contains SAS code for analyzing data from the HPTN 037 study, focusing on the relationship between non-injection drug use (NIDU) and high-risk sexual behavior.
+## Files in this Directory
 
-## Overview
+1. `hptn037_nidu_highrisk_analysis.sas`: Main analysis script for NIDU and high-risk sexual behavior.
+2. `hptn037_fig_1.sas`: Script for generating Figure 1, showing non-injection drug use trends.
+3. `hptn037_fig_2.sas`: Script for generating Figure 2, showing sexual risk behavior trends.
 
-The code performs the following main tasks:
-1. Data preparation and cleaning
-2. Creation of derived variables
-3. Data transposition for longitudinal analysis
-4. Statistical analysis using logistic regression and GEE models
-5. Diagnostic tests for multicollinearity
+## File Descriptions
 
-## Prerequisites
+### 1. hptn037_nidu_highrisk_analysis.sas
 
-- SAS software (version 9.4 or later recommended)
-- Access to the HPTN 037 dataset
+This script performs the primary analysis for the HPTN 037 study:
 
-## Setup
+- Prepares and cleans the dataset
+- Creates derived variables
+- Conducts logistic regression and GEE models
+- Performs diagnostic tests
 
-1. Clone this repository to your local machine.
-2. Update the library references in the code to point to your local data directories:
-   ```sas
-   libname workdt '';
-   libname external '';
-   ```
+**Key Outputs**: 
+- Logistic regression results (`logistic_regression_output.pdf`)
+- GEE model results (`gee_model_output.pdf`)
 
-## Running the Code
+### 2. hptn037_fig_1.sas
 
-1. Open the SAS program in your SAS environment.
-2. Adjust any necessary parameters or file paths.
-3. Run the entire program or individual sections as needed.
+This script focuses on non-injection drug use analysis for the Philadelphia site:
 
-## Code Structure
+- Merges and prepares relevant datasets
+- Conducts statistical analysis using GLIMMIX
+- Generates a visualization of drug use trends over time
 
-The code is organized into the following sections:
+**Key Output**: A plot showing the change in non-injection drug use during the study.
 
-1. Setup and Data Preparation
-2. Creation of Derived Variables
-3. Data Transposition and Cleaning
-4. Outcome Variable Preparation
-5. Final Dataset Preparation
-6. Statistical Analysis
-7. Diagnostic Tests
+### 3. hptn037_fig_2.sas
 
-Each section is clearly commented in the code for easy navigation.
+This script analyzes and visualizes sexual risk behavior trends:
 
-## Output
+- Prepares the dataset for sexual risk behavior analysis
+- Calculates risk percentages for each visit
+- Generates a plot showing changes in sexual risk behaviors over time
 
-The code generates several output files:
-- Logistic regression results: `logistic_regression_output.pdf`
-- GEE model results: `gee_model_output.pdf`
+**Key Output**: A plot showing the change in sexual risk behavior during the study.
 
-These files will be saved in the directory specified in the `ods pdf file=` statements.
+## Usage Instructions
 
-## Customization
+1. Ensure you have SAS software installed (version 9.4 or later recommended).
+2. Update the `libname` statements in each script to point to your local data directory.
+3. Run the scripts in the following order:
+   a. `hptn037_nidu_highrisk_analysis.sas`
+   b. `hptn037_fig_1.sas`
+   c. `hptn037_fig_2.sas`
+4. Review the output PDFs and generated plots.
 
-You may need to modify certain parts of the code based on your specific analysis needs:
-- Adjust the site filter if analyzing data from sites other than Philadelphia
-- Modify or add variables in the derived variables section
-- Add or remove covariates in the statistical models
+## Data Requirements
+
+- HPTN 037 dataset files: `analydatafinal`, `keys`, `dm`, `Ra`, `analydata`
+- Ensure all required variables are present in these datasets
 
 ## Notes
 
-- Ensure that your dataset matches the variable names and structures expected by this code.
-- Some sections of the code (e.g., LOCF imputation) are commented out. Uncomment and adjust as needed for your analysis.
+- The analysis focuses on the Philadelphia site (site_id = 222) in some scripts.
+- Modify site selection if analyzing data from other locations.
+- Review and validate all results, especially percentage calculations.
 
 ## Support
 
-For questions or issues related to this code, please open an issue in the GitHub repository.
+For questions or issues related to this analysis, please contact the study data management team.
