@@ -25,8 +25,8 @@ The code performs the following main tasks:
 1. Clone this repository to your local machine.
 2. Update the library references in the code to point to your local data directories:
    ```sas
-   libname workdt 'path_to_your_data_directory';
-   libname external 'path_to_your_external_directory';
+   libname workdt '';
+   libname external '';
    ```
 
 ## Running the Code
